@@ -1,1 +1,1 @@
-web: 'biyanaija'
+web: biyanaija
