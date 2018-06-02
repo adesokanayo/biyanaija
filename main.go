@@ -4,10 +4,19 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"text/template"
 )
 
 func main() {
+
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+
+	http.ListenAndServe(":"+port, nil)
+	log.Println("Listening now from server...")
 
 	http.HandleFunc("/", set)
 	http.HandleFunc("/read", read)
@@ -16,7 +25,8 @@ func main() {
 	http.HandleFunc("/test", test)
 	http.HandleFunc("/postdata", postdata)
 	http.Handle("/favicon.ico", http.NotFoundHandler())
-	http.ListenAndServe(":8080", nil)
+
+	
 
 }
 
@@ -87,34 +97,33 @@ func postdata(w http.ResponseWriter, req *http.Request) {
 	fmt.Println("Your Phone Number:", phonenumber)
 	fmt.Println("Your Service code:", servicecode)
 	fmt.Fprintln(w, "Your Text:", text)
-	
+
 	switch text {
 	case "":
-		
+
 		fmt.Fprintln(w, "CON Welcome to FlintGrace Payment Interface\n"+
-						"1. Request Payment\n"+
-						"2. Approve or Reject Pending Payment\n"+
-		"Thank you\n")
-	
+			"1. Request Payment\n"+
+			"2. Approve or Reject Pending Payment\n"+
+			"Thank you\n")
+
 	case "1":
 
 		fmt.Fprintln(w, "Enter Phone number of payer")
-    case "2":
+	case "2":
 
-		fmt.Fprintln(w,"Below are pending payments\n"+
-				"1. Ayo N3000\n" +
-				"2. Jide N2000\n"+
-				"3. Shola N500\n"+
-				"Thank you\n")
-		
+		fmt.Fprintln(w, "Below are pending payments\n"+
+			"1. Ayo N3000\n"+
+			"2. Jide N2000\n"+
+			"3. Shola N500\n"+
+			"Thank you\n")
+
 	case "2*1":
 
-		fmt.Fprintln(w,"N3000 to be paid to Ayo\n"+
-						"Enter your 4 digit secret code to confirm"+ 
-						""+
-						
-						"Thank you\n")
+		fmt.Fprintln(w, "N3000 to be paid to Ayo\n"+
+			"Enter your 4 digit secret code to confirm"+
+			""+
 
-	
+			"Thank you\n")
+
 	}
 }

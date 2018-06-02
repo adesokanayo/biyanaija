@@ -28,3 +28,10 @@
 [prune]
   go-tests = true
   unused-packages = true
+
+[metadata.heroku]
+root-package = "biyanaija"
+go-version = "go1.9.2"
+install = [ "./..." ]
+
+
