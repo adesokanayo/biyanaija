@@ -5,11 +5,12 @@ import (
 	"log"
 	"net/http"
 	"text/template"
+	"os"
 )
 
 func main() {
 
-	
+PORT:= os.Getenv("port")
 
 	http.HandleFunc("/", set)
 	http.HandleFunc("/read", read)
@@ -18,7 +19,7 @@ func main() {
 	http.HandleFunc("/test", test)
 	http.HandleFunc("/postdata", postdata)
 	http.Handle("/favicon.ico", http.NotFoundHandler())
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":"+PORT, nil)
 
 }
 
@@ -113,7 +114,7 @@ func postdata(w http.ResponseWriter, req *http.Request) {
 
 		fmt.Fprintln(w,"N3000 to be paid to Ayo\n"+
 						"Enter your 4 digit secret code to confirm"+ 
-						"<"+
+						""+
 						
 						"Thank you\n")
 
