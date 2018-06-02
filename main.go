@@ -10,7 +10,7 @@ import (
 
 func main() {
 
-PORT:= os.Getenv("port")
+PORT:= os.Getenv("PORT")
 
 	http.HandleFunc("/", set)
 	http.HandleFunc("/read", read)
