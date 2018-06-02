@@ -90,7 +90,8 @@ func postdata(w http.ResponseWriter, req *http.Request) {
 	fmt.Println("Your Phone Number:", phonenumber)
 	fmt.Println("Your Service code:", servicecode)
 	fmt.Fprintln(w, "Your Text:", text)
-	
+
+	if req.Method=="POST" {	
 	switch text {
 	case "":
 		
@@ -120,4 +121,11 @@ func postdata(w http.ResponseWriter, req *http.Request) {
 
 	
 	}
+
+	}
+
+
+
+
+	
 }
