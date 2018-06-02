@@ -110,8 +110,8 @@ func postdata(w http.ResponseWriter, req *http.Request) {
 	case "2*1":
 
 		fmt.Fprintln(w,"N3000 to be paid to Ayo\n"+
-						"Enter your 4 digit secret code to confirm" 
-						"<input name="pin"></input>\n"+
+						"Enter your 4 digit secret code to confirm"+ 
+						""+
 						
 						"Thank you\n")
 
