@@ -12,10 +12,10 @@ func main() {
 
 	PORT := os.Getenv("PORT")
 
-	http.HandleFunc("/", set)
+	http.HandleFunc("/set", set)
 	http.HandleFunc("/read", read)
 	http.HandleFunc("/visits", visits)
-	http.HandleFunc("/landing", landing)
+	http.HandleFunc("/", landing)
 	http.HandleFunc("/test", test)
 	http.HandleFunc("/postdata", postdata)
 	http.Handle("/favicon.ico", http.NotFoundHandler())
@@ -25,6 +25,7 @@ func main() {
 
 func landing(w http.ResponseWriter, r *http.Request) {
 
+	fmt.Fprintln(w, "Welcome to Flintgrace USSD Landing Page")
 }
 
 func visits(w http.ResponseWriter, req *http.Request) {
@@ -108,11 +109,10 @@ func postdata(w http.ResponseWriter, req *http.Request) {
 
 			fmt.Fprintln(w, "CON Enter Name of Payer")
 
-
 		case "1*08062224091*mike":
 
 			fmt.Fprintln(w, "END Mike has been notified to approve payment\n"+
-			"Thank you\n")
+				"Thank you\n")
 
 		case "2":
 
