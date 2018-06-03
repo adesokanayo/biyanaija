@@ -4,13 +4,13 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"text/template"
 	"os"
+	"text/template"
 )
 
 func main() {
 
-PORT:= os.Getenv("PORT")
+	PORT := os.Getenv("PORT")
 
 	http.HandleFunc("/", set)
 	http.HandleFunc("/read", read)
@@ -91,41 +91,44 @@ func postdata(w http.ResponseWriter, req *http.Request) {
 	fmt.Println("Your Service code:", servicecode)
 	//fmt.Fprintln(w, "Your Text:", text)
 
-	if req.Method=="POST" {	
-	switch text {
-	case "":
-		
-		fmt.Fprintln(w, "CON Welcome to FlintGrace Payment Interface\n"+
-						"1. Request Payment\n"+
-						"2. Approve or Reject Pending Payment\n"+
-		"Thank you\n")
-	
-	case "1":
+	if req.Method == "POST" {
+		switch text {
+		case "":
 
-		fmt.Fprintln(w, "CON Enter Phone number of payer")
-    case "2":
+			fmt.Fprintln(w, "CON Welcome to FlintGrace Payment Interface\n"+
+				"1. Request Payment\n"+
+				"2. Approve or Reject Pending Payment\n"+
+				"Thank you\n")
 
-		fmt.Fprintln(w,"CON Below are pending payments\n"+
-				"1. Ayo N3000\n" +
+		case "1":
+
+			fmt.Fprintln(w, "CON Enter Phone number of payer")
+		case "2":
+
+			fmt.Fprintln(w, "CON Below are pending payments\n"+
+				"1. Ayo N3000\n"+
 				"2. Jide N2000\n"+
 				"3. Shola N500\n"+
 				"Thank you\n")
-		
-	case "2*1":
 
-		fmt.Fprintln(w,"CON N3000 to be paid to Ayo\n"+
-						"Enter your 4 digit secret code to confirm"+ 
-						""+
-						
-						"Thank you\n")
+		case "2*1":
 
-	
+			fmt.Fprintln(w, "CON N3000 to be paid to Ayo\n"+
+				"Enter your 4 digit secret code to confirm"+
+				"\n"+
+
+				"Thank you\n")
+
+		case "2*1*1234":
+
+			fmt.Fprintln(w, "END N3000 paid to Ayo\n"+
+				"Transaction Successful"+
+				"\n"+
+
+				"Thank you\n")
+
+		}
+
 	}
 
-	}
-
-
-
-
-	
 }
