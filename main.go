@@ -24,8 +24,10 @@ func main() {
 }
 
 func landing(w http.ResponseWriter, r *http.Request) {
+	
+	welcomemsg ="*** Welcome to BiyaNaija**** "  + "You can send and receive money easily" 
 
-	fmt.Fprintln(w, "Welcome to Flintgrace USSD Landing Page")
+	fmt.Fprintln(w, welcomemsg)
 }
 
 func visits(w http.ResponseWriter, req *http.Request) {
