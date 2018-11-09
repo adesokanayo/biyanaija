@@ -117,8 +117,8 @@ func postdata(w http.ResponseWriter, req *http.Request) {
 
 		case "2":
 
-			fmt.Fprintln(w, "CON Below are pending payments requested from you.\n"+
-				     "Select the payment you wish to treat.\n"
+			fmt.Fprintln(w, "CON Below are pending payments requested from you.\n" +
+				     "Select the payment you wish to treat.\n" +
 				"1. Ayo N3000\n"+
 				"2. Jide N2000\n"+
 				"3. Shola N500\n"+
