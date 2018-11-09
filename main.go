@@ -98,14 +98,16 @@ func postdata(w http.ResponseWriter, req *http.Request) {
 		switch text {
 		case "":
 
-			fmt.Fprintln(w, "CON Welcome to FlintGrace Payment Interface\n"+
+			
+			*** Welcome to BiyaNaija**** "  + "You can send and receive money easily"
+			fmt.Fprintln(w, "CON *** Welcome to BiyaNaija****\n"+  "You can send and receive money easily\n" +
 				"1. Request Payment\n"+
 				"2. Approve or Reject Pending Payment\n"+
 				"Thank you\n")
 
 		case "1":
 
-			fmt.Fprintln(w, "CON Enter Phone number of payer")
+			fmt.Fprintln(w, "CON Enter Phone number of Payer")
 
 		case "1*08062224091":
 
@@ -118,7 +120,8 @@ func postdata(w http.ResponseWriter, req *http.Request) {
 
 		case "2":
 
-			fmt.Fprintln(w, "CON Below are pending payments\n"+
+			fmt.Fprintln(w, "CON Below are pending payments requested from you.\n"+
+				     "Select the payment you wish to treat.\n"
 				"1. Ayo N3000\n"+
 				"2. Jide N2000\n"+
 				"3. Shola N500\n"+
