@@ -97,9 +97,6 @@ func postdata(w http.ResponseWriter, req *http.Request) {
 	if req.Method == "POST" {
 		switch text {
 		case "":
-
-			
-			*** Welcome to BiyaNaija**** "  + "You can send and receive money easily"
 			fmt.Fprintln(w, "CON *** Welcome to BiyaNaija****\n" +  "You can send and receive money easily\n" +
 				"1. Request Payment\n"+
 				"2. Approve or Reject Pending Payment\n"+
