@@ -25,7 +25,7 @@ func main() {
 
 func landing(w http.ResponseWriter, r *http.Request) {
 	
-	welcomemsg ="*** Welcome to BiyaNaija**** "  + "You can send and receive money easily" 
+	var welcomemsg ="*** Welcome to BiyaNaija**** "  + "You can send and receive money easily" 
 
 	fmt.Fprintln(w, welcomemsg)
 }
