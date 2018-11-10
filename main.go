@@ -114,7 +114,7 @@ func postdata(w http.ResponseWriter, req *http.Request) {
 
 			fmt.Fprintln(w, "CON Enter Name of Payer")
 
-		case "1*08062224476*mike":
+		case "1*08062224476*1000*mike":
 
 			fmt.Fprintln(w, "END Mike has been notified to approve the  payment\n" +
 				     "You can reach out to Mike\n" +
