@@ -97,7 +97,7 @@ func postdata(w http.ResponseWriter, req *http.Request) {
 	if req.Method == "POST" {
 		switch text {
 		case "":
-			fmt.Fprintln(w, "CON *** Welcome to BiyaNaija****\n" +  "You can send and receive money easily\n" +
+			fmt.Fprintln(w, "CON *** Welcome to MyPay Platform****\n" +  "You can send and receive money easily\n" +
 				"1. Request Payment\n"+
 				"2. Approve or Reject Pending Payment\n"+
 				"Thank you\n")
@@ -106,11 +106,11 @@ func postdata(w http.ResponseWriter, req *http.Request) {
 
 			fmt.Fprintln(w, "CON Enter Phone number of Payer")
 
-		case "1*08062224091":
+		case "1*08062224476":
 
 			fmt.Fprintln(w, "CON Enter Name of Payer")
 
-		case "1*08062224091*mike":
+		case "1*08062224476*mike":
 
 			fmt.Fprintln(w, "END Mike has been notified to approve payment\n"+
 				"Thank you\n")
