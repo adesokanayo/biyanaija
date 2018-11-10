@@ -104,21 +104,26 @@ func postdata(w http.ResponseWriter, req *http.Request) {
 
 		case "1":
 
-			fmt.Fprintln(w, "CON Enter Phone number of Payer")
+			fmt.Fprintln(w, "CON Enter Phone number of Payer:")
 
 		case "1*08062224476":
+
+			fmt.Fprintln(w, "CON Enter Amount you want to be paid:")
+			
+		case "1*08062224476*1000":
 
 			fmt.Fprintln(w, "CON Enter Name of Payer")
 
 		case "1*08062224476*mike":
 
-			fmt.Fprintln(w, "END Mike has been notified to approve payment\n"+
-				"Thank you\n")
+			fmt.Fprintln(w, "END Mike has been notified to approve the  payment\n" +
+				     "You can reach out to Mike\n" +
+				"Thank you.\n")
 
 		case "2":
 
 			fmt.Fprintln(w, "CON Below are pending payments requested from you.\n" +
-				     "Select the payment you wish to treat.\n" +
+				     "Select the payment you wish to treat:\n" +
 				"1. Ayo N3000\n"+
 				"2. Jide N2000\n"+
 				"3. Shola N500\n"+
@@ -127,7 +132,7 @@ func postdata(w http.ResponseWriter, req *http.Request) {
 		case "2*1":
 
 			fmt.Fprintln(w, "CON N3000 to be paid to Ayo\n"+
-				"Enter your 4 digit secret code to confirm"+
+				     "Enter your 4 digit secret code to confirm:"+
 				"\n"+
 
 				"Thank you\n")
