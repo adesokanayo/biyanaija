@@ -4,18 +4,18 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"os"
 	"text/template"
+	//"os"
 )
 
 func main() {
-
-	PORT := os.Getenv("PORT")
+	PORT := "8080"
+	//PORT := os.Getenv("PORT")
 
 	http.HandleFunc("/set", set)
 	http.HandleFunc("/read", read)
 	http.HandleFunc("/visits", visits)
-	http.HandleFunc("/", landing)
+	http.HandleFunc("/a", landing)
 	http.HandleFunc("/test", test)
 	http.HandleFunc("/postdata", postdata)
 	http.Handle("/favicon.ico", http.NotFoundHandler())
@@ -25,7 +25,7 @@ func main() {
 
 func landing(w http.ResponseWriter, r *http.Request) {
 
-	fmt.Fprintln(w, "Welcome to Flintgrace USSD Landing Page")
+	fmt.Fprintln(w, "Welcome to BiyaNaija  Payments")
 }
 
 func visits(w http.ResponseWriter, req *http.Request) {
@@ -65,7 +65,11 @@ func test(w http.ResponseWriter, req *http.Request) {
 
 	//var a strin
 
-	tpl, err := template.ParseFiles("test.gohtml")
+	fs := http.FileServer(http.Dir("assets"))
+
+	tpl, err := template.ParseFiles("assets/index.gohtml")
+	http.Handle("/",fs)
+
 	if err != nil {
 		log.Fatalln(err)
 	}
