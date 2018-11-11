@@ -5,12 +5,12 @@ import (
 	"log"
 	"net/http"
 	"text/template"
-	//"os"
+	"os"
 )
 
 func main() {
-	PORT := "8080"
-	//PORT := os.Getenv("PORT")
+	//PORT := "8080"
+	PORT := os.Getenv("PORT")
 
 	http.HandleFunc("/set", set)
 	http.HandleFunc("/read", read)
@@ -24,8 +24,10 @@ func main() {
 }
 
 func landing(w http.ResponseWriter, r *http.Request) {
+	
+	var welcomemsg ="*** Welcome to MyPay**** "  + "You can send and receive money easily" 
 
-	fmt.Fprintln(w, "Welcome to BiyaNaija  Payments")
+	fmt.Fprintln(w, welcomemsg)
 }
 
 func visits(w http.ResponseWriter, req *http.Request) {
@@ -99,28 +101,33 @@ func postdata(w http.ResponseWriter, req *http.Request) {
 	if req.Method == "POST" {
 		switch text {
 		case "":
-
-			fmt.Fprintln(w, "CON Welcome to FlintGrace Payment Interface\n"+
+			fmt.Fprintln(w, "CON *** Welcome to MyPay Platform****\n" +  "You can send and receive money easily\n" +
 				"1. Request Payment\n"+
 				"2. Approve or Reject Pending Payment\n"+
 				"Thank you\n")
 
 		case "1":
 
-			fmt.Fprintln(w, "CON Enter Phone number of payer")
+			fmt.Fprintln(w, "CON Enter Phone number of Payer:")
 
-		case "1*08062224091":
+		case "1*08062224476":
+
+			fmt.Fprintln(w, "CON Enter Amount you want to be paid:")
+			
+		case "1*08062224476*1000":
 
 			fmt.Fprintln(w, "CON Enter Name of Payer")
 
-		case "1*08062224091*mike":
+		case "1*08062224476*1000*mike":
 
-			fmt.Fprintln(w, "END Mike has been notified to approve payment\n"+
-				"Thank you\n")
+			fmt.Fprintln(w, "END Mike has been notified to approve the  payment\n" +
+				     "You can reach out to Mike\n" +
+				"Thank you.\n")
 
 		case "2":
 
-			fmt.Fprintln(w, "CON Below are pending payments\n"+
+			fmt.Fprintln(w, "CON Below are pending payments requested from you.\n" +
+				     "Select the payment you wish to treat:\n" +
 				"1. Ayo N3000\n"+
 				"2. Jide N2000\n"+
 				"3. Shola N500\n"+
@@ -129,7 +136,7 @@ func postdata(w http.ResponseWriter, req *http.Request) {
 		case "2*1":
 
 			fmt.Fprintln(w, "CON N3000 to be paid to Ayo\n"+
-				"Enter your 4 digit secret code to confirm"+
+				     "Enter your 4 digit secret code to confirm:"+
 				"\n"+
 
 				"Thank you\n")
