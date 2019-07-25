@@ -25,7 +25,7 @@ func main() {
 
 func landing(w http.ResponseWriter, r *http.Request) {
 	
-	var welcomemsg ="*** Welcome to MyPay**** "  + "You can send and receive money easily" 
+	var welcomemsg ="*** Welcome to MyPay**** "  + "You can send and receive money from anywhere" 
 
 	fmt.Fprintln(w, welcomemsg)
 }
@@ -101,7 +101,7 @@ func postdata(w http.ResponseWriter, req *http.Request) {
 	if req.Method == "POST" {
 		switch text {
 		case "":
-			fmt.Fprintln(w, "CON *** Welcome to MyPay Platform****\n" +  "You can send and receive money easily\n" +
+			fmt.Fprintln(w, "CON *** Welcome to MyPay Platform ****\n" +  "You can send and receive money easily\n" +
 				"1. Request Payment\n"+
 				"2. Approve or Reject Pending Payment\n"+
 				"Thank you\n")
@@ -112,7 +112,7 @@ func postdata(w http.ResponseWriter, req *http.Request) {
 
 		case "1*08062224476":
 
-			fmt.Fprintln(w, "CON Enter Amount you want to be paid:")
+			fmt.Fprintln(w, "CON Enter Amount you want to receive:")
 			
 		case "1*08062224476*1000":
 
