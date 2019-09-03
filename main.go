@@ -65,7 +65,6 @@ func read(w http.ResponseWriter, req *http.Request) {
 
 func test(w http.ResponseWriter, req *http.Request) {
 
-	//var a strin
 
 	fs := http.FileServer(http.Dir("assets"))
 
@@ -88,19 +87,17 @@ func postdata(w http.ResponseWriter, req *http.Request) {
 	servicecode := 124
 	phonenumber := req.FormValue("phonenumber")
 	text := req.FormValue("text")
-	//var text string
-
-	//var Response string
+	
 
 	fmt.Println("Below are Posted Information")
 	fmt.Println("Your SessionID:", sessionid)
 	fmt.Println("Your Phone Number:", phonenumber)
 	fmt.Println("Your Service code:", servicecode)
-	//fmt.Fprintln(w, "Your Text:", text)
+	
 
 	if req.Method == "POST" {
 		switch text { 
-		case "*233000000000*1000#":
+		case "233000000000*1000":
 			fmt.Fprintln(w, "CON *** Welcome to MyPay****\n" +  "Select Debit Account\n" +
 				"1. 00*****211\n"+
 				"2. 06*****790\n")
