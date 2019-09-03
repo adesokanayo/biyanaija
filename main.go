@@ -100,7 +100,7 @@ func postdata(w http.ResponseWriter, req *http.Request) {
 
 	if req.Method == "POST" {
 		switch text { 
-		case "233000000000*1000#":
+		case "*233000000000*1000#":
 			fmt.Fprintln(w, "CON *** Welcome to MyPay****\n" +  "Select Debit Account\n" +
 				"1. 00*****211\n"+
 				"2. 06*****790\n")
