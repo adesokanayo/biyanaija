@@ -103,11 +103,11 @@ func postdata(w http.ResponseWriter, req *http.Request) {
 				"2. 06*****790\n")
 				
 
-		case "1":
+		case "233000000000*1000*1":
 
 			fmt.Fprintln(w, "CON Enter Receiver Account Number:")
 
-		case "1*0000000033":
+		case "233000000000*1000*1*0000000033":
 
 			fmt.Fprintln(w, "CON Select Payout Currrency:\n" +
 			
@@ -115,16 +115,16 @@ func postdata(w http.ResponseWriter, req *http.Request) {
 				"2. United States DOllar (USD)\n")
 		
 			
-		case "1*0000000033*1":
+		case "233000000000*1000*1*0000000033*1":
 
 			fmt.Fprintln(w, "CON Enter Payment Purpose:")
 
-		case "1*0000000033*1*School Fees":
+		case "233000000000*1000*1*0000000033*1*School Fees":
 
 			fmt.Fprintln(w, "CON You want to send GHS 1,000 to 0000000033. Fee NGN190.00 Total Debit: NGN15,000.00\n" +
 		"Enter Pin: \n")
 			
-		case "1*0000000033*1*School Fees*1234":
+		case "233000000000*1000*1*0000000033*1*School Fees*1234":
 
 			fmt.Fprintln(w, "END Your Payment has been received and will be processed in 24 hours.\n" +
 				"Thank you.\n")
