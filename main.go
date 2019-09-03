@@ -117,12 +117,13 @@ func postdata(w http.ResponseWriter, req *http.Request) {
 			
 		case "233000000000*1000*1*0000000033*1":
 
-			fmt.Fprintln(w, "CON Enter Payment Purpose:")
+			fmt.Fprintln(w, "CON Enter Payment Purpose: \n" + "")
 
 		case "233000000000*1000*1*0000000033*1*School Fees":
 
-			fmt.Fprintln(w, "CON You want to send GHS 1,000 to 0000000033. Fee NGN190.00 Total Debit: NGN15,000.00\n" +
-		"Enter Pin: \n")
+			fmt.Fprintln(w, "CON You want to send GHS 1,000.00 to 0000000033. Fee NGN190.00 Total Debit: NGN15,000.00\n" +
+		"Enter Pin: \n" +
+	 "\n")
 			
 		case "233000000000*1000*1*0000000033*1*School Fees*1234":
 
