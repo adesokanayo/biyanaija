@@ -100,32 +100,36 @@ func postdata(w http.ResponseWriter, req *http.Request) {
 
 	if req.Method == "POST" {
 		switch text { 
-		case "":
-			fmt.Fprintln(w, "CON *** Welcome to MyPay****\n" +  "You can send and receive money easily\n" +
-				"1. Request Payment\n"+
-				"2. Approve or Reject Pending Payment\n"+
-				"Thank you\n")
+		case "*384*9294*23312345678*1000#":
+			fmt.Fprintln(w, "CON *** Welcome to MyPay****\n" +  "Select Debit Account\n" +
+				"1. 00*****211\n"+
+				"2. 06*****790\n")
+				
 
 		case "1":
 
-			fmt.Fprintln(w, "CON Enter Phone number of Payer:")
+			fmt.Fprintln(w, "CON Enter Receiver Account Number:")
 
-		case "1*08062224476":
+		case "1*0000000033":
 
-			fmt.Fprintln(w, "CON Enter Amount you want to receive:")
+			fmt.Fprintln(w, "CON Select Payout Currrency:\n" +
 			
-		case "1*08062224476*1000":
-
-			fmt.Fprintln(w, "CON Enter Name of Payer")
-
-		case "1*08062224476*1000*mike":
-
-			fmt.Fprintln(w, "CON Enter your USSD Pin:")
+				"1. Ghanian Cedis (GHS)\n"+
+				"2. United States DOllar (USD)\n")
+		
 			
-		case "1*08062224476*1000*mike*1234":
+		case "1*0000000033*1":
 
-			fmt.Fprintln(w, "END Mike has been notified to approve the  payment\n" +
-				     "You can reach out to Mike\n" +
+			fmt.Fprintln(w, "CON Enter Payment Purpose:")
+
+		case "1*0000000033*1*School Fees":
+
+			fmt.Fprintln(w, "CON You want to send GHS 1,000 to 0000000033. Fee NGN190.00 Total Debit: NGN15,000.00\n" +
+		"Enter Pin: \n")
+			
+		case "1*0000000033*1*School Fees*1234":
+
+			fmt.Fprintln(w, "END Your Payment has been received and will be processed in 24 hours.\n" +
 				"Thank you.\n")
 
 		case "2":
